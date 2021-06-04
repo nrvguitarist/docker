@@ -1,12 +1,12 @@
-### https://docs.docker.com/engine/reference/commandline/service_create/
+# https://docs.docker.com/engine/reference/commandline/service_create/
 
-### create a network
+# create a network
 docker network create --attachable --driver overlay elastic
 
-### how to add a label to a node
+# how to add a label to a node
 docker node update --label-add region=east yswe2dm4c5fdgtsrli1e8ya5l
 
-### create the service
+# create the service
 docker service create \
 --name log_gen \
 --network elastic \
@@ -20,7 +20,7 @@ docker.elastic.co/logstash/logstash:7.13.1
 
 --env MONITORING_ENABLED=FALSE \
 
-### additional useful config
+# additional useful config
 --constraint node.hostname!=node-2 \
 --constraint node.labels.security==high \
 --constraint node.id==2ivku8v2gvtg4 \
