@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker build -t log_rec:7.13.1 .
+docker build -t log_rec:1.0 .
 
 # create the log_rec service
 docker service create \
@@ -12,4 +12,4 @@ docker service create \
 --endpoint-mode dnsrr \
 --update-parallelism 1 \
 --update-delay 60s \
-log_rec:7.13.1
+log_rec:1.0
