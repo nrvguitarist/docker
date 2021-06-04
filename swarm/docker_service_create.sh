@@ -1,3 +1,4 @@
+#!/bin/bash
 # https://docs.docker.com/engine/reference/commandline/service_create/
 
 # create a network
