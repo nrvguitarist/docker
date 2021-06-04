@@ -1,0 +1,21 @@
+# For more information on multiple pipelines, see the documentation:
+#   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
+
+#- pipeline.id: main
+#  path.config: "/usr/share/logstash/pipeline"
+
+#- pipeline.id: log_generator
+#  path.config: "/usr/share/logstash/config/pipelines/log_generator.yml"
+
+- pipeline.id: log_receiver
+  config.string: |
+    input {
+      tcp {
+        port => 514
+      }
+    }
+    filter {
+    }
+    output {
+      stdout {}
+    }
