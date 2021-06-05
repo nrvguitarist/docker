@@ -13,7 +13,7 @@ docker service create \
 --publish published=6514,target=6514,protocol=tcp,mode=ingress \
 --publish published=5601,target=5601,protocol=tcp,mode=ingress \
 --publish published=9200,target=9200,protocol=tcp,mode=ingress \
-haproxytech/haproxy-debian:2.0
+ha:1.0
 
 # hopefully don't need this with Dockerfile adding this.
 --mount type=bind,src=/etc/haproxy/,dst=/etc/haproxy/,ro=true \
