@@ -47,10 +47,13 @@ docker service create \
 --publish published=80,target=80,protocol=tcp,mode=ingress \
 --publish published=443,target=443,protocol=tcp,mode=ingress \
 --mount type=bind,src=/etc/haproxy/,dst=/etc/haproxy/,ro=true \
+--mount type=bind,src=/etc/haproxy/default/,dst=/etc/default/,ro=true \
 haproxytech/haproxy-debian:2.0
 
 --mount type=volume,src=halg,dst=/usr/local/etc/haproxy/ \
 --dns=127.0.0.11 \
+
+# docker run -p 80:80 kennethreitz/httpbin
 
 --env MONITORING_ENABLED=FALSE \
 
