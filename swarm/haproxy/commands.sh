@@ -1,6 +1,8 @@
+docker build -t hap:1.0 .
+
 # create the haproxy service
 docker service create \
---name ha \
+--name hap \
 --network elastic \
 --mode replicated \
 --replicas 2 \
@@ -13,7 +15,7 @@ docker service create \
 --publish published=6514,target=6514,protocol=tcp,mode=ingress \
 --publish published=5601,target=5601,protocol=tcp,mode=ingress \
 --publish published=9200,target=9200,protocol=tcp,mode=ingress \
-ha:1.0
+hap:1.0
 
 # hopefully don't need this with Dockerfile adding this.
 --mount type=bind,src=/etc/haproxy/,dst=/etc/haproxy/,ro=true \
