@@ -1,3 +1,4 @@
+
 # For more information on multiple pipelines, see the documentation:
 #   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
 
@@ -17,5 +18,8 @@
     filter {
     }
     output {
-      stdout {}
+      #stdout {}
+      file {
+        path => "/usr/share/logstash/nate-%{+YYY-MM-dd}.txt"
+      }
     }
