@@ -4,7 +4,7 @@ docker service create \
 --constraint node.hostname==udock \
 --network elastic \
 --mode replicated \
---replicas 1 \
+--replicas 2 \
 --endpoint-mode vip \
 --update-parallelism 1 \
 --update-delay 60s \
