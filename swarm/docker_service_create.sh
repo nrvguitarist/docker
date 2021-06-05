@@ -43,11 +43,10 @@ docker service create \
 --endpoint-mode vip \
 --update-parallelism 1 \
 --update-delay 60s \
---dns=127.0.0.11 \
 --publish published=80,target=80,protocol=tcp,mode=ingress \
 --publish published=443,target=443,protocol=tcp,mode=ingress \
+--publish published=6514,target=6514,protocol=tcp,mode=ingress \
 --mount type=bind,src=/etc/haproxy/,dst=/etc/haproxy/,ro=true \
---mount type=bind,src=/etc/haproxy/default/,dst=/etc/default/,ro=true \
 haproxytech/haproxy-debian:2.0
 
 --mount type=volume,src=halg,dst=/usr/local/etc/haproxy/ \
