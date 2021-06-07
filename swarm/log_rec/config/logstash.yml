@@ -2,3 +2,5 @@
 #xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch:9200" ]
 #config.reload.automatic: true
 #config.reload.interval: 3s
+#log.level: debug
+path.logs: /var/log/logstash
