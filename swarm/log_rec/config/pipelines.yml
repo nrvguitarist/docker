@@ -1,4 +1,3 @@
-
 # For more information on multiple pipelines, see the documentation:
 #   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
 
@@ -9,17 +8,24 @@
 #  path.config: "/usr/share/logstash/config/pipelines/log_generator.yml"
 
 - pipeline.id: log_receiver
+  pipeline.batch.size: 1 # in number of events
+  pipeline.batch.delay: 50 # in ms
   config.string: |
     input {
-      tcp {
+      syslog {
         port => 514
+        #proxy_protocol => true
       }
+      #tcp {
+        #port => 514
+      #}
     }
     filter {
     }
     output {
-      stdout {}
+      #stdout {}
       file {
-        path => "/usr/share/logstash/nate-%{+YYY-MM-dd}.txt"
+        path => "/tmp/nate-%{+YYY-MM-dd}.txt"
       }
     }
+
