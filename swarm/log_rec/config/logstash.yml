@@ -3,4 +3,4 @@
 #config.reload.automatic: true
 #config.reload.interval: 3s
 #log.level: debug
-path.logs: /var/log/logstash
+#path.logs: /var/log/logstash
