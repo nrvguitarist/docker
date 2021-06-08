@@ -4,7 +4,7 @@
 - module: panw
   panos:
     enabled: true
-    var.syslog_host: 192.168.1.1
+    var.syslog_host: 0.0.0.0
     var.syslog_port: 9516
 
     # Set which input to use between syslog (default) or file.
