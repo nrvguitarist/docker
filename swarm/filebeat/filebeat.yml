@@ -16,8 +16,8 @@ tags: ["pa_log", "filebeat_panw_v2.0"]
 
 #----------------------------- Redis Output -----------------------------------
 output.redis:
-  hosts: ["localhost"]
-  password: "xyz"
+  hosts: ["redis"]
+  password: "nate"
   key: "panw"
   db: 0
   timeout: 5
