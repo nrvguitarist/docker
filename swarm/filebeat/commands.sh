@@ -1,7 +1,7 @@
-docker build -t fb9516_redis:1.0.2 .
-docker image tag fb9516_redis:1.0.2 udock.sharpt:8443/fb9516_redis:1.0.2
-docker push udock.sharpt:8443/fb9516_redis:1.0.2
-docker service update fb --image udock.sharpt:8443/fb9516_redis:1.0.2
+docker build -t fb9516_redis:1.0.3 .
+docker image tag fb9516_redis:1.0.3 udock.sharpt:8443/fb9516_redis:1.0.3
+docker push udock.sharpt:8443/fb9516_redis:1.0.3
+docker service update fb --image udock.sharpt:8443/fb9516_redis:1.0.3
 
 # create the filebeat service
 docker service create \
@@ -12,5 +12,5 @@ docker service create \
 --endpoint-mode dnsrr \
 --update-parallelism 1 \
 --update-delay 60s \
-udock.sharpt:8443/fb9516_redis:1.0.2
+udock.sharpt:8443/fb9516_redis:1.0.3
 
