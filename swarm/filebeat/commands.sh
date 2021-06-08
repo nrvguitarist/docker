@@ -1,4 +1,6 @@
 docker build -t fb9516_redis:1.0.1 .
+docker image tag fb9516_redis:1.0.1 udock.sharpt:8443/fb9516_redis:1.0.1
+docker push udock.sharpt:8443/fb9516_redis:1.0.1
 
 # create the filebeat service
 docker service create \
