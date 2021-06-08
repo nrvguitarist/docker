@@ -5,7 +5,7 @@ docker service create \
 --name hap \
 --network elastic \
 --mode replicated \
---replicas 2 \
+--replicas 1 \
 --endpoint-mode vip \
 --update-parallelism 1 \
 --update-delay 60s \
@@ -15,6 +15,7 @@ docker service create \
 --publish published=6514,target=6514,protocol=tcp,mode=ingress \
 --publish published=5601,target=5601,protocol=tcp,mode=ingress \
 --publish published=9200,target=9200,protocol=tcp,mode=ingress \
+--publish published=6379,target=6379,protocol=tcp,mode=ingress \
 hap:1.0
 
 # hopefully don't need this with Dockerfile adding this.
